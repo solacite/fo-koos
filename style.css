@@ -1,5 +1,13 @@
 body {
     text-align: center;
+    color: rgb(56, 36, 74);
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 40px 0;
+    letter-spacing: 4px;
 }
 
 /* button */
@@ -11,9 +19,12 @@ button {
     border-radius: 10px; /* rounds border */
     margin: 0 10px; /* spacing btwn btns */
     cursor: pointer; /* pointy finger upon hover */
-    color: black; /* text colour */
+
+    background-color: rgb(230, 218, 240);
+    color: rgb(102, 72, 128); /* text colour */
 }
 
 button:hover {
     background-color: rgb(178, 138, 214);
+    color: rgb(56, 36, 74);
 }
