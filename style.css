@@ -28,3 +28,23 @@ button:hover {
     background-color: rgb(178, 138, 214);
     color: rgb(56, 36, 74);
 }
+
+/* navbar */
+
+nav {
+    background-color: rgb(230, 218, 240);
+    padding: 15px 30px; /* increases spacing inside */
+    border-radius: 10px;
+    margin: 20px auto 50px auto; /* spacing btwn top of screen + nav */
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(102, 72, 128);
+    margin: 0 20px; /* spacing btwn nav elements */
+    font-weight: 400;
+}
+
+nav a:hover {
+    color: rgb(56, 36, 74);
+}
