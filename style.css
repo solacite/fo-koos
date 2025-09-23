@@ -1,3 +1,19 @@
 body {
     text-align: center;
 }
+
+/* button */
+
+button {
+    padding: 12px 24px; /* spacing within btn */
+    font-size: 16px;
+    border: none;
+    border-radius: 10px; /* rounds border */
+    margin: 0 10px; /* spacing btwn btns */
+    cursor: pointer; /* pointy finger upon hover */
+    color: black; /* text colour */
+}
+
+button:hover {
+    background-color: rgb(178, 138, 214);
+}
