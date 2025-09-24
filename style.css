@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    color: rgb(56, 36, 74);
+    color: rgb(49, 82, 38);;
 }
 
 h1 {
@@ -33,19 +33,19 @@ button {
     margin: 0 10px; /* spacing btwn btns */
     cursor: pointer; /* pointy finger upon hover */
 
-    background-color: rgb(230, 218, 240);
-    color: rgb(102, 72, 128); /* text colour */
+    background-color: rgb(205, 229, 196);
+    color: rgb(49, 82, 38);; /* text colour */
 }
 
 button:hover {
-    background-color: rgb(178, 138, 214);
-    color: rgb(56, 36, 74);
+    background-color: rgb(174, 214, 159);
+    color: rgb(49, 82, 38);
 }
 
 /* navbar */
 
 nav {
-    background-color: rgb(230, 218, 240);
+    background-color: rgb(205, 229, 196);
     padding: 15px 30px; /* increases spacing inside */
     border-radius: 10px;
     margin: 20px auto 50px auto; /* spacing btwn top of screen + nav */
@@ -53,11 +53,11 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: rgb(102, 72, 128);
+    color: rgb(64, 97, 53);
     margin: 0 20px; /* spacing btwn nav elements */
     font-weight: 400;
 }
 
 nav a:hover {
-    color: rgb(56, 36, 74);
+    color: rgb(49, 82, 38);
 }
