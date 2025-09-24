@@ -4,10 +4,23 @@ body {
 }
 
 h1 {
-    font-size: 12rem;
+    font-size: 10rem;
     font-weight: bold;
-    margin: 40px 0;
+    margin: 150px 0 20px 0;
     letter-spacing: 4px;
+    font-family: 'GoogleSansCode', cursive;
+}
+
+/* fonts */
+
+@font-face {
+    font-family: 'CaveatBrush';
+    src: url('fonts/CaveatBrush-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GoogleSansCode';
+    src: url('fonts/GoogleSansCode-Regular.ttf') format('truetype');
 }
 
 /* button */
