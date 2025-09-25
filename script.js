@@ -17,3 +17,19 @@ function updateDisplay() {
     const display = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     timerDisplay.textContent = display;
 }
+
+startBtn.addEventListener("click", function() {
+    if (!isRunning) {
+        isRunning = true;
+        timerInterval = setInterval(function() {
+            timeLeft--;
+            updateDisplay();
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                isRunning = false;
+                alert("time is up brotha");
+            }
+        }, 1000);
+    }
+});
