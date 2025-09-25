@@ -33,3 +33,11 @@ startBtn.addEventListener("click", function() {
         }, 1000);
     }
 });
+
+resetBtn.addEventListener("click", function() {
+    clearInterval(timerInterval);
+    isRunning = false;
+
+    timeLeft = 25 * 60;
+    updateDisplay();
+});
