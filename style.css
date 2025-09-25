@@ -2,6 +2,9 @@ body {
     text-align: center;
     color: rgb(49, 82, 38);;
     font-family: 'GoogleSansCode', cursive;
+    background: linear-gradient(45deg, rgb(224, 255, 212), rgb(255, 255, 255), rgb(201, 255, 180));
+    background-size: 400% 400%;
+    animation: gradientShift 30s ease infinite;
 }
 
 h1 {
@@ -66,4 +69,12 @@ nav a:hover {
     color: rgb(97, 143, 81);
     background-color: rgb(174, 214, 159);
     border-radius: 5px;
+}
+
+/* whoosh (anim) */
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
