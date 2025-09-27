@@ -46,3 +46,36 @@ resetBtn.addEventListener("click", function() {
     timeLeft = 25 * 60;
     updateDisplay();
 });
+
+// quote randomness
+
+let quotes = [];
+const quoteElement = document.getElementById('motivationalQuote');
+const shuffleButton = document.getElementById('shuffleBtn');
+
+// load quotes from file
+async function loadQuotes() {
+    try {
+        const response = await fetch('quotes.txt'); // load the file
+        const text = await response.text();
+        quotes = text.split('\n').filter(quote => quote.trim() !== ''); // split by lines, remove empty ones
+        displayRandomQuote(); // show first quote
+    } catch (error) {
+        console.log('Could not load quotes file');
+        quotes = ["error :("]; // fallback
+    }
+}
+
+// display random quote
+function displayRandomQuote() {
+    if (quotes.length > 0) {
+        const randomIndex = Math.floor(Math.random() * quotes.length); // Pick random number
+        quoteElement.textContent = `"${quotes[randomIndex]}"`;
+    }
+}
+
+// shuffle btn click
+shuffleButton.addEventListener('click', displayRandomQuote);
+
+// load quotes when page loads
+loadQuotes();
