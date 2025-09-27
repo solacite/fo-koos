@@ -1,15 +1,9 @@
 /* fonts */
 
 @font-face {
-    font-family: 'CaveatBrush';
-    src: url('fonts/CaveatBrush-Regular.ttf') format('truetype');
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'GoogleSansCode';
     src: url('fonts/GoogleSansCode-Regular.ttf') format('truetype');
-    font-display: swap;
+    font-display: fallback;
 }
 
 /* gengen */
@@ -37,7 +31,7 @@ h1 {
 .timer {
     font-size: 10rem;
     font-weight: bold;
-    margin: 150px 0 20px 0;
+    margin: 200px 0 0 0;
     letter-spacing: 4px;
     font-family: 'GoogleSansCode', Arial, sans-serif;
 }
@@ -92,4 +86,63 @@ nav a:hover {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+/* prog bar */
+
+.progress-container {
+    width: 50%;
+    height: 30px;
+    background-color: rgba(205, 229, 196, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: rgb(174, 214, 159);
+    border-radius: 10px;
+    width: 100%;
+    transition: width 0.5s ease;
+}
+
+/* quote functionality */
+
+.quote-container {
+    position: absolute;
+    top: 120px;
+    left: 30px;
+    max-width: 800px; /* text wrap */
+    display: flex;
+    flex-direction: column; /* align button */
+    gap: 10px;
+}
+
+.quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgb(64, 97, 53);
+    margin: 0;
+    line-height: 1.4; /* space btwn lines */
+}
+
+.shuffle-btn {
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    font-size: 0.9rem !important;
+    cursor: pointer;
+    padding: 5px !important;
+    margin: 0 !important;
+    align-self: flex-start; /* align button */
+}
+
+.shuffle-btn:hover {
+    background-color: rgba(205, 229, 196, 0.5) !important;
+    border-radius: 5px !important;
 }

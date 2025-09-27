@@ -3,6 +3,8 @@ const timerDisplay = document.querySelector("h1");
 const buttons = document.querySelectorAll("button")
 const startBtn = buttons[0];
 const resetBtn = buttons[1];
+const progressBar = document.getElementById('progressBar');
+const totalTime = 25 * 60;
 
 // timer
 let timeLeft = 25 * 60
@@ -16,6 +18,9 @@ function updateDisplay() {
     const seconds = timeLeft % 60;
     const display = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     timerDisplay.textContent = display;
+
+    const progressPercent = (timeLeft / totalTime) * 100;
+    progressBar.style.width = progressPercent + '%';
 }
 
 startBtn.addEventListener("click", function() {
