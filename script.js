@@ -1,8 +1,8 @@
 // vars
 const timerDisplay = document.querySelector("h1");
-const buttons = document.querySelectorAll("button")
-const startBtn = buttons[0];
-const resetBtn = buttons[1];
+const timerButtons = document.querySelectorAll("button:not(.shuffle-btn)");
+const startBtn = timerButtons[0];
+const resetBtn = timerButtons[1];
 const progressBar = document.getElementById('progressBar');
 const totalTime = 25 * 60;
 
@@ -25,23 +25,31 @@ function updateDisplay() {
 
 startBtn.addEventListener("click", function() {
     if (!isRunning) {
+        // start timer
         isRunning = true;
+        startBtn.textContent = "pause";
         timerInterval = setInterval(function() {
             timeLeft--;
             updateDisplay();
-
             if (timeLeft <= 0) {
                 clearInterval(timerInterval);
                 isRunning = false;
+                startBtn.textContent = "start";
                 alert("time is up brotha");
             }
         }, 1000);
+    } else {
+        // pause timer
+        clearInterval(timerInterval);
+        isRunning = false;
+        startBtn.textContent = "start";
     }
 });
 
 resetBtn.addEventListener("click", function() {
     clearInterval(timerInterval);
     isRunning = false;
+    startBtn.textContent = "start";
 
     timeLeft = 25 * 60;
     updateDisplay();
