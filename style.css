@@ -6,6 +6,12 @@
     font-display: fallback;
 }
 
+/* theme variables */
+
+:root {
+    --primary-hue: 100;
+}
+
 /* gengen */
 
 * {
@@ -16,16 +22,19 @@
 
 body {
     text-align: center;
-    color: rgb(49, 82, 38);;
+    color: hsl(var(--primary-hue), 45%, 20%);
     font-family: 'GoogleSansCode', Arial, sans-serif;
-    background: linear-gradient(45deg, rgb(224, 255, 212), rgb(255, 255, 255), rgb(201, 255, 180));
+    background: linear-gradient(45deg, 
+        hsl(var(--primary-hue), 65%, 88%), 
+        hsl(var(--primary-hue), 40%, 96%), 
+        hsl(var(--primary-hue), 70%, 82%));
     background-size: 400% 400%;
     animation: gradientShift 30s ease infinite;
 }
 
 h1 {
-   font-family: 'GoogleSansCode', Arial, sans-serif;
-    color: rgb(49, 82, 38);
+    font-family: 'GoogleSansCode', Arial, sans-serif;
+    color: hsl(var(--primary-hue), 45%, 20%);
 }
 
 .timer {
@@ -46,20 +55,19 @@ button {
     margin: 0 10px; /* spacing btwn btns */
     cursor: pointer; /* pointy finger upon hover */
     font-family: 'GoogleSansCode', Arial, sans-serif;
-
-    background-color: rgb(205, 229, 196);
-    color: rgb(49, 82, 38);; /* text colour */
+    background-color: hsl(var(--primary-hue), 50%, 82%);
+    color: hsl(var(--primary-hue), 45%, 20%);
 }
 
 button:hover {
-    background-color: rgb(174, 214, 159);
-    color: rgb(49, 82, 38);
+    background-color: hsl(var(--primary-hue), 45%, 72%);
+    color: hsl(var(--primary-hue), 45%, 20%);
 }
 
 /* navbar */
 
 nav {
-    background-color: rgb(205, 229, 196);
+    background-color: hsl(var(--primary-hue), 50%, 82%);
     padding: 15px 30px; /* increases spacing inside */
     border-radius: 10px;
     margin: 20px 60px 50px 60px; /* spacing btwn top of screen + nav */
@@ -67,7 +75,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: rgb(64, 97, 53);
+    color: hsl(var(--primary-hue), 40%, 30%);
     margin: 0 20px; /* spacing btwn nav elements */
     font-weight: 400;
     font-family: 'GoogleSansCode', Arial, sans-serif;
@@ -75,8 +83,8 @@ nav a {
 }
 
 nav a:hover {
-    color: rgb(97, 143, 81);
-    background-color: rgb(174, 214, 159);
+    color: hsl(var(--primary-hue), 35%, 40%);
+    background-color: hsl(var(--primary-hue), 45%, 72%);
     border-radius: 5px;
 }
 
@@ -93,10 +101,9 @@ nav a:hover {
 .progress-container {
     width: 50%;
     height: 30px;
-    background-color: rgba(205, 229, 196, 0.3);
+    background-color: hsla(var(--primary-hue), 40%, 85%, 0.3);
     border-radius: 15px;
     overflow: hidden;
-    
     position: fixed;
     bottom: 20px;
     left: 50%;
@@ -105,7 +112,7 @@ nav a:hover {
 
 .progress-bar {
     height: 100%;
-    background-color: rgb(174, 214, 159);
+    background-color: hsl(var(--primary-hue), 35%, 75%);
     border-radius: 10px;
     width: 100%;
     transition: width 0.5s ease;
@@ -126,7 +133,7 @@ nav a:hover {
 .quote {
     font-size: 1.1rem;
     font-style: italic;
-    color: rgb(64, 97, 53);
+    color: hsl(var(--primary-hue), 25%, 35%);
     margin: 0;
     line-height: 1.4; /* space btwn lines */
 }
@@ -143,7 +150,7 @@ nav a:hover {
 }
 
 .shuffle-btn:hover {
-    background-color: rgba(205, 229, 196, 0.5) !important;
+    background-color: hsla(var(--primary-hue), 40%, 85%, 0.5) !important;
     border-radius: 5px !important;
 }
 
@@ -161,17 +168,79 @@ nav a:hover {
     border: 4px solid transparent;
     border-radius: 25px;
     background-color: transparent;
-    color: rgb(95, 119, 87);
+    color: hsl(var(--primary-hue), 20%, 40%);
     font-family: 'GoogleSansCode', Arial, sans-serif;
     text-align: center;
     outline: none;
 }
 
 .task-input:focus {
-    border-color: rgb(174, 214, 159);
+    border-color: hsl(var(--primary-hue), 35%, 75%);
     background-color: transparent;
 }
 
 .task-input::placeholder {
-    color: rgba(49, 82, 38, 0.6);
+    color: hsla(var(--primary-hue), 30%, 25%, 0.6);
+}
+
+/* theme controls */
+
+.theme-slider {
+    width: 120px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: linear-gradient(to right, 
+        hsl(0, 70%, 70%), 
+        hsl(60, 70%, 70%), 
+        hsl(120, 70%, 70%), 
+        hsl(180, 70%, 70%), 
+        hsl(240, 70%, 70%), 
+        hsl(300, 70%, 70%));
+    border-radius: 10px;
+    outline: none;
+}
+
+.theme-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 2px solid hsl(var(--primary-hue), 50%, 60%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.theme-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 2px solid hsl(var(--primary-hue), 50%, 60%);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.reset-theme-btn {
+    padding: 6px 14px !important;
+    font-size: 0.8rem !important;
+    margin: 0 !important;
+    background-color: hsl(var(--primary-hue), 50%, 82%) !important;
+    color: hsl(var(--primary-hue), 45%, 20%) !important;
+}
+
+.reset-theme-btn:hover {
+    background-color: hsl(var(--primary-hue), 45%, 72%) !important;
+}
+
+.theme-controls {
+    position: absolute;
+    top: 120px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    z-index: 10;
 }

@@ -1,6 +1,6 @@
 // vars
 const timerDisplay = document.querySelector("h1");
-const timerButtons = document.querySelectorAll("button:not(.shuffle-btn)");
+const timerButtons = document.querySelectorAll("button:not(.shuffle-btn):not(.reset-theme-btn)");
 const startBtn = timerButtons[0];
 const resetBtn = timerButtons[1];
 const progressBar = document.getElementById('progressBar');
@@ -87,3 +87,16 @@ shuffleButton.addEventListener('click', displayRandomQuote);
 
 // load quotes when page loads
 loadQuotes();
+
+// theme slider (0=red, 100=green, 120=purple)
+const themeSlider = document.getElementById('themeSlider');
+const resetThemeBtn = document.getElementById('resetTheme');
+
+themeSlider.addEventListener('input', function() {
+    document.documentElement.style.setProperty('--primary-hue', this.value);
+});
+
+resetThemeBtn.addEventListener('click', function() {
+    themeSlider.value = 100;
+    document.documentElement.style.setProperty('--primary-hue', '100');
+});
