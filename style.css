@@ -244,3 +244,44 @@ nav a:hover {
     align-items: center;
     z-index: 10;
 }
+
+/* ranking stuffs */
+
+.rankings-container {
+    max-width: 600px;
+    margin: 80px auto 0 auto;
+    padding: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: hsl(var(--primary-hue), 40%, 35%);
+    margin-bottom: 40px;
+}
+
+.ranking-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    background-color: hsl(var(--primary-hue), 50%, 90%);
+    border-radius: 15px;
+    margin: 15px 0;
+    transition: transform 0.2s;
+}
+
+.ranking-card:hover {
+    transform: translateY(-5px);
+}
+
+.rank-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: hsl(var(--primary-hue), 45%, 25%);
+    min-width: 50px;
+}
+
+.rank-name {
+    font-size: 1.3rem;
+    color: hsl(var(--primary-hue), 40%, 30%);
+}
