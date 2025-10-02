@@ -102,9 +102,9 @@ resetThemeBtn.addEventListener('click', function() {
 });
 
 // start/pause shortcut (spacebar)
-document.addEventListener('keydown', function(e)) {
+document.addEventListener('keydown', function(e) {
     if (e.code == 'Space' && e.target.tagName !== 'INPUT') {
-        e.preventDefault()
+        e.preventDefault();
         startBtn.click();
     }
-}
+});
