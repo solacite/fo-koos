@@ -100,3 +100,11 @@ resetThemeBtn.addEventListener('click', function() {
     themeSlider.value = 100;
     document.documentElement.style.setProperty('--primary-hue', '100');
 });
+
+// start/pause shortcut (spacebar)
+document.addEventListener('keydown', function(e)) {
+    if (e.code == 'Space' && e.target.tagName !== 'INPUT') {
+        e.preventDefault()
+        startBtn.click();
+    }
+}
