@@ -36,6 +36,8 @@ startBtn.addEventListener("click", function() {
                 isRunning = false;
                 startBtn.textContent = "start";
                 alert("time is up brotha");
+                timeLeft = 25 * 60; // reset
+                updateDisplay();
             }
         }, 1000);
     } else {
