@@ -96,6 +96,7 @@ const resetThemeBtn = document.getElementById('resetTheme');
 
 themeSlider.addEventListener('input', function() {
     document.documentElement.style.setProperty('--primary-hue', this.value);
+    localStorage.setItem('themeHue', this.value);
 });
 
 resetThemeBtn.addEventListener('click', function() {
@@ -110,3 +111,10 @@ document.addEventListener('keydown', function(e) {
         startBtn.click();
     }
 });
+
+// save theme prefs
+const savedHue = localStorage.getItem('themeHue');
+if (savedHue) {
+    themeSlider.value = savedHue;
+    document.documentElement.style.setProperty('--primary-hue', savedHue);
+}
